@@ -5,16 +5,73 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Poppins', sans-serif; */
 }
 
 body,
-html {
-
+html { 
+    cursor: url('images/cursor/cursor.png'),auto;
     background-color: #d5bdaf;
+    overflow-x: hidden;
 }
 
+/* scrollbar  */
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable both edges;
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb:hover{
+    background-color: #ffffff;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #1e1e1e;
+    width: 80%;
+    border-radius: 20px;
+}
+
+/* loading animation */
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1e1e;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader .loading{ 
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: 5px solid #fff;
+    background-color: #d5bdaf;
+    animation: load 1s ease-in-out infinite forwards;
+    transition: all 1s ease;
+
+
+}
+@keyframes load{
+    0%{
+        outline-offset:0 ;
+        outline-width: 5px;
+        
+    }
+    100%{
+        outline-offset:50px ;
+        outline-width: 0;
+    }
+}
+
+/* main body  */
 #main {
+    scroll-snap-align: start
+        ;
     width: 85%;
     height: 500vh;
     margin: 50px auto;
@@ -145,7 +202,7 @@ html {
     height: 100%;
     border-radius: 12px;
     box-shadow: 0 0 5px #00000065;
-    background-size: 110%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -159,7 +216,7 @@ html {
 
 /* item hover  */
 .item:hover {
-    background-size: 100%;
+    
     transition: .4s linear;
     >h1, p{
         margin-bottom: 10px;
@@ -179,36 +236,62 @@ html {
     font-style: italic;
 }
 
-.item a {
-    font-size: 16px;
-    text-decoration: none;
-    margin-top: 10px;
-    color: #00f2ff;
-    font-weight: 700;
-}
 
 
 /* placing of grid items   */
+/* add to cart  */
 .item-1 {
     grid-area: 1 / 1 / 3 / 3;
     background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project1.jpg")
 }
+
+/* card open  */
 
 .item-2 {
     grid-area: 1 / 3 / 3 / 5;
     background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project2.jpg")
 }
 
+/* menu icon  */
+
 .item-3 {
     grid-area: 1 / 5 / 3 / 7;
     background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project3.jpg")
 }
+
+/* sticky images  */
+
 .item-4{
     grid-area: 3 / 1 / 5 / 5;
     background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project4.jpg")
 }
+
+/* navigation bar  */
 .item-5{
-    grid-area: 3 / 5 / 6 / 7;
-    /* background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/") */
+    grid-area: 3 / 5 / 7 / 7;
+    background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #ffffff73), url("images/projects/project5.jpg")
     
 }
+/* image carousel  */
+.item-6{
+    grid-area: 5 / 1 / 7 / 3;
+    background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project6.jpg")
+    
+}
+/* save button  */
+.item-7{
+    grid-area: 5 / 3 / 7 / 5;
+    background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project7.jpg");
+}
+
+/* Brand scroll  */
+.item-8{
+    grid-area: 7 / 1 / 9 / 4;
+    background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project8.jpg");
+}
+.item-9{
+    grid-area: 7 / 4 / 9 / 7;
+    /* background-image: linear-gradient(to bottom, #ffffff00, #ffffff33, #00000073), url("images/projects/project8.jpg"); */
+}
+
+

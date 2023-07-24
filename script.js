@@ -1,10 +1,10 @@
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('#main'),
-    smooth: true
-});
 var tl = gsap.timeline();
+tl.to("#loader", {
+    top:"-100vh",
+    delay:2,
+    duration:.2
 
-
+})
 tl.from(".profile-image,.profile-details h1, .profile-details h3, .profile-details p, .profile-socials", {
     y: 150,
     opacity: 0,
